@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>길이변환</title>
+<title>장보기 목록</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -13,21 +14,45 @@
 
 </head>
 <body>
-<div class="container">
-	<form method="post" action="/lesson02/quiz05_1.jsp">
-		<h1>길이 변환</h1>
-		<div class="d-flex">
-			<input type="text" class="form-control w-50" name="length">
-			<span class="ml-2 mt-3">cm</span>
-		</div>
-		<div class="mt-3">
-			<label for="inch" >인치  </label><input type="checkbox" name="unit" value="inch" id="inch">
-			<label for="yard">야드  </label><input type="checkbox" name="unit" value="yard" id="yard">
-			<label for="fit">피트  </label><input type="checkbox" name="unit" value="fit" id="fit" >
-			<label for="meter">미터  </label><input type="checkbox" name="unit" value="meter" id="meter">
-		</div>
-		<button type="submit" class="btn btn-success">변환하기</button>
-	</form>
-</div>
+	<%
+		List<String> goodsList = Arrays.asList(new String[]{ 
+		    "저지방 우유", "요플레 4개", "딸기 1팩", "삼겹살 300g", "생수 6개", "주방 세제"
+		});
+
+	%>
+	<div class="container">
+		<h1 class="text-center">장보기 목록</h1>
+		<table class="table table-hover table-striped">
+			<thead>
+				<th class="text-center">번호</th>
+				<td class="text-center">품목</td>
+			</thead>
+			<tbody>
+				<% 
+				Iterator<String> iter = goodsList.iterator();
+				int num = 1;
+				while(iter.hasNext()){
+					String goods = iter.next();
+					
+				%>
+				<tr>
+					<th class="text-center">
+					<%
+						out.print(num);
+						num++;
+					%>
+					</th>
+					<td class="text-center">
+					<%
+						out.print(goods);
+					%>
+					</td>
+				</tr>
+				<% 
+					}
+				%>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>
