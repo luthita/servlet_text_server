@@ -1,10 +1,13 @@
 @charset "UTF-8";
 
+a {text-decoration:none;}
+a:hover{text-decoration:none;}
+
 #wrap{width:1200px; margin:auto;}
 header{height:100px;}
 header .logo {width:150px}
 header .search{width:1050px}
 header .search-bar{width:450px;}
 nav {height : 40px;}
-.contents{height:500px;}
+
 footer{height:200px;}
