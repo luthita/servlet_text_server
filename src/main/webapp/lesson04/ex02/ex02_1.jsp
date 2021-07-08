@@ -40,7 +40,7 @@
 				<td><%= result.getString("yyyymmdd") %></td>
 				<td><%= result.getString("email") %></td>
 				<td><%= result.getString("introduce") %></td>
-				<td><a href="/lesson04/ex02_delete?id=<%= result.getInt("id") %>">삭제하기</a></td>
+				<td><a href="/db/ex02_delete?id=<%= result.getInt("id") %>">삭제하기</a></td>
 			</tr>
 			<%
 				}

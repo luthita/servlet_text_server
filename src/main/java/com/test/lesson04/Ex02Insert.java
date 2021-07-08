@@ -10,12 +10,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.test.common.MysqlService;
 
-@WebServlet("/lesson04/ex02_insert")
+@WebServlet("/db/ex02_insert")
 public class Ex02Insert extends HttpServlet {
 	@Override
 	public void doPost (HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String name = request.getParameter("name");
-		String birth = request.getParameter("birth");
+		String yyyymmdd = request.getParameter("yyyymmdd");
 		String email = request.getParameter("email");
 		String introduce = request.getParameter("introduce");
 		
@@ -23,8 +23,8 @@ public class Ex02Insert extends HttpServlet {
 		mysqlService.connection(); // DB연결
 		
 		// insert query 수행
-		String query = "insert into `user` (`name`, `birth`, `email`, `introduce`) values"
-					+ "('" + name + "', '" + birth + "', '" + email + "', '"+ introduce +"')";
+		String query = "insert into `user` (`name`, `yyyymmdd`, `email`, `introduce`) values"
+					+ "('" + name + "', '" + yyyymmdd + "', '" + email + "', '"+ introduce +"')";
 		try {
 			mysqlService.update(query);
 		} catch (SQLException e) {

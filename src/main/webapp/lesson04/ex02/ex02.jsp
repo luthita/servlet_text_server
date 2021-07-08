@@ -13,7 +13,7 @@
 		유저 추가 ) ex02.jsp ( input 폼) -> ex02_insert(서블릿, insert 쿼리) -> ex02_1.jsp(유저 목록, select 쿼리)
 	
 	 --%>
-	<form method="post" action="lesson04/ex02_insert">
+	<form method="post" action="/db/ex02_insert">
 		<p>
 			<strong>이름</strong>
 			<input type="text" name="name">
